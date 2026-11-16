@@ -1,0 +1,14 @@
+q0 por ciclo = 0.00692
+Analitico perdidos = 148.0
+MC media = 147.8  de = 11.7  P5 = 129  P95 = 167
+Error relativo media vs analitico = 0.14 %
+Costo medio = 17.00 M  P5 = 14.84 M  P95 = 19.20 M
+Heterogeneo (Beta a=2): media = 145.3  de = 21.0  P5 = 113  P95 = 181
+lambda calibrado = 0.001737 por bin-dia (tau0 = 4.0 d)
+tau=4: q=0.692% p=8.00% perdidos=147.9 [129,168] costo=17.01M ahorro=-0.01M
+tau=3: q=0.520% p=6.06% perdidos=112.0 [95,129] costo=12.89M ahorro=4.11M
+tau=2: q=0.347% p=4.08% perdidos=75.5 [62,90] costo=8.68M ahorro=8.31M
+tau=1: q=0.174% p=2.06% perdidos=38.2 [28,49] costo=4.39M ahorro=12.61M
+Error +-0.3 pp: n = 2935 bin-ciclos = 1.6 ciclos de flota completa
+Error +-0.2 pp: n = 6604 bin-ciclos = 3.6 ciclos de flota completa
+Error +-0.1 pp: n = 26417 bin-ciclos = 14.3 ciclos de flota completa

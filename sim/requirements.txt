@@ -1,0 +1,2 @@
+numpy==2.5.3
+# Probado con Python 3.13.18; solo usa la biblioteca estándar además de NumPy.

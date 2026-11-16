@@ -1,0 +1,49 @@
+Ejecución: 2026-11-16T22:38:52+00:00
+Python 3.13.18, NumPy 2.5.3, Linux x86_64
+Generador: numpy.random.default_rng (PCG64), semilla 2026; un generador para las partes 1-5, otro para la parte 6 y otro para la parte 7; 10.000 temporadas por escenario.
+SHA-256 simulacion_flota.py: 44f5160bd86d4fef255105159f2345c82260892e94971afad8a5abf4c91b1b8d
+
+Resumen del modelo base:
+q0 por ciclo = 0.00692
+Analitico perdidos = 148.0
+MC media = 147.8  de = 11.7  P5 = 129  P95 = 167
+Error relativo media vs analitico = 0.14 %
+Costo medio = 17.00 M  P5 = 14.84 M  P95 = 19.20 M
+Heterogeneo (Beta a=2): media = 145.3  de = 21.0  P5 = 113  P95 = 181
+lambda calibrado = 0.001737 por bin-dia (tau0 = 4.0 d)
+tau=4: q=0.692% p=8.00% perdidos=147.9 [129,168] costo=17.01M ahorro=-0.01M
+tau=3: q=0.520% p=6.06% perdidos=112.0 [95,129] costo=12.89M ahorro=4.11M
+tau=2: q=0.347% p=4.08% perdidos=75.5 [62,90] costo=8.68M ahorro=8.31M
+tau=1: q=0.174% p=2.06% perdidos=38.2 [28,49] costo=4.39M ahorro=12.61M
+Error +-0.3 pp: n = 2935 bin-ciclos = 1.6 ciclos de flota completa
+Error +-0.2 pp: n = 6604 bin-ciclos = 3.6 ciclos de flota completa
+Error +-0.1 pp: n = 26417 bin-ciclos = 14.3 ciclos de flota completa
+
+Escenarios con recuperación:
+tau=4 alpha=0%: ausentes netos=147.8 [129,167] valor evitado=0.00M
+tau=4 alpha=40%: ausentes netos=94.7 [79,110] valor evitado=6.11M
+tau=3 alpha=0%: ausentes netos=112.0 [95,129] valor evitado=4.11M
+tau=2 alpha=0%: ausentes netos=75.5 [62,90] valor evitado=8.31M
+tau=2 alpha=40%: ausentes netos=48.2 [37,60] valor evitado=11.46M
+tau=2 alpha=60%: ausentes netos=34.3 [25,44] valor evitado=13.05M
+
+Balance de tres cuentas:
+alpha=0% h=0.0%: N=1702.2 B=23.8 F=124.0 H=0.0 (N+B+D = 1850 en las 10000 temporadas)
+alpha=0% h=0.1%: N=1681.9 B=23.5 F=123.5 H=21.2 (N+B+D = 1850 en las 10000 temporadas)
+alpha=40% h=0.1%: N=1734.3 B=19.3 F=74.9 H=21.5 (N+B+D = 1850 en las 10000 temporadas)
+alpha=60% h=0.1%: N=1761.0 B=17.1 F=50.2 H=21.7 (N+B+D = 1850 en las 10000 temporadas)
+
+Salidas (SHA-256):
+  banda_ciclos.dat               ffa491c2883949271a16716c2be3ad63dea4a4bc4d4f4714e74364336a35bfb4
+  histograma.dat                 f5f50d99915a1a072c3c233e01193d2f99eed5f8e2ae15b6cd23db124c33dd2b
+  escenarios_tau.dat             e533d23eb3e6c491aa2290128a72170589b74663beabff89114d52f5fdb7bbab
+  sensibilidad.dat               da717cf2ee8b7881d34605ce9ea7d344213d3f99fe89cb4833086466ed7b490c
+  escenarios_recuperacion.dat    6b0434fb36742c2317f0b44f3c51986876426e55d06529c8490231fe35bbc6d2
+  balance_tres_cuentas.dat       5fab8efb7856802055e8d221e78ccbe2ea3e2bc3359e053a22e2ba19c271425c
+  resumen_simulacion.txt         9f476ff30320147b1a5725310bcc7ae29579360f8368a132847c4d40cf826c87
+
+Pruebas de identidad:
+  [OK] Media MC vs N0*p0: 147.8 vs 148.00 (tolerancia 3 errores estándar = 0.35)
+  [OK] DE MC vs sqrt(N0*p0*(1-p0)): 11.7 vs 11.67 (tolerancia 3 %)
+  [OK] Tres cuentas sin rescate ni daño: B+F vs N0*p0: 147.8 vs 148.00
+  [OK] Invariante N+B+D = N0 en todas las temporadas: verificado con assert en cada ciclo
